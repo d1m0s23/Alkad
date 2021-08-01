@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProjectGuid>{2A771201-A289-495A-B952-A8577770DC4C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GameWer</RootNamespace>
+    <AssemblyName>Alkad</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Alkad.ico</ApplicationIcon>
+    <StartupObject>GameWer.Bootstrap</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Facepunch.Steamworks.Win64">
+      <HintPath>..\..\Visual Studio 2019\Projects\stringfixer\stringfixer\bin\Debug\Facepunch.Steamworks.Win64.dll</HintPath>
+    </Reference>
+    <Reference Include="GameWer.SDK">
+      <HintPath>..\..\Visual Studio 2019\Projects\stringfixer\stringfixer\bin\Debug\GameWer.SDK.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Visual Studio 2019\Projects\stringfixer\stringfixer\bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="websocket-sharp">
+      <HintPath>..\..\Visual Studio 2019\Projects\stringfixer\stringfixer\bin\Debug\websocket-sharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AntiCheatManager.cs" />
+    <Compile Include="ApplicationManager.cs" />
+    <Compile Include="Bootstrap.cs" />
+    <Compile Include="CustomSystem\Information\Interface.cs" />
+    <Compile Include="CustomSystem\KeyLogger\Interface.cs" />
+    <Compile Include="CustomSystem\KeyLogger\Native.cs" />
+    <Compile Include="CustomSystem\Process32\EntryItem.cs" />
+    <Compile Include="CustomSystem\Process32\Interface.cs" />
+    <Compile Include="CustomSystem\Process32\Native.cs" />
+    <Compile Include="CustomSystem\Process32\Native2.cs" />
+    <Compile Include="CustomSystem\Steamwork\Interface.cs" />
+    <Compile Include="Data\AppInfo.cs" />
+    <Compile Include="Data\Processes.cs" />
+    <Compile Include="DiscordManager.cs" />
+    <Compile Include="Helper\ChallengeExt.cs" />
+    <Compile Include="Helper\Crypto.cs" />
+    <Compile Include="Helper\Cryptography.cs" />
+    <Compile Include="Helper\Date.cs" />
+    <Compile Include="Helper\ExceptionHelper.cs" />
+    <Compile Include="Helper\Timer.cs" />
+    <Compile Include="KeyManager.cs" />
+    <Compile Include="NetworkManager.cs" />
+    <Compile Include="OutputManager.cs" />
+    <Compile Include="PlayerProcess.cs" />
+    <Compile Include="ProcessManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Struct\BannedPlayerResultPacket.cs" />
+    <Compile Include="Struct\BaseNetworkPacket.cs" />
+    <Compile Include="Struct\NetworkAuthPacket.cs" />
+    <Compile Include="Struct\NetworkAuthResultPacket.cs" />
+    <Compile Include="Struct\NetworkBadVersionPacket.cs" />
+    <Compile Include="Struct\NetworkDetailsPlayerPacket.cs" />
+    <Compile Include="Struct\NetworkPlayerProcessesPacket.cs" />
+    <Compile Include="Struct\NetworkProcessesSystemReady.cs" />
+    <Compile Include="UIManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
