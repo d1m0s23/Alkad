@@ -37,21 +37,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Facepunch.Steamworks.Win64">
-      <HintPath>..\..\Visual Studio 2019\Projects\stringfixer\stringfixer\bin\Debug\Facepunch.Steamworks.Win64.dll</HintPath>
+      <HintPath>..\..\..\Alkad\Dependencies\Facepunch.Steamworks.Win64.dll</HintPath>
     </Reference>
     <Reference Include="GameWer.SDK">
-      <HintPath>..\..\Visual Studio 2019\Projects\stringfixer\stringfixer\bin\Debug\GameWer.SDK.dll</HintPath>
+      <HintPath>..\..\..\Alkad\Dependencies\GameWer.SDK.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\Visual Studio 2019\Projects\stringfixer\stringfixer\bin\Debug\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\Alkad\Dependencies\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="websocket-sharp">
-      <HintPath>..\..\Visual Studio 2019\Projects\stringfixer\stringfixer\bin\Debug\websocket-sharp.dll</HintPath>
+      <HintPath>..\..\..\Alkad\Dependencies\websocket-sharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
